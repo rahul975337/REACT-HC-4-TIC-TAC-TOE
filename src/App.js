@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import Icon from "./components/icons";
-
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 import { Card, CardBody, Container, Button, Col, Row } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
@@ -74,7 +71,7 @@ const App = () => {
     }
   };
 
-  const changeItem = itemNumber => {
+  const changeItem = (itemNumber) => {
     if (winMessage) {
       return toast(winMessage, { type: "success" });
     }
@@ -104,10 +101,10 @@ const App = () => {
               </Button>
             </div>
           ) : (
-              <h1 className="text-center text-warning">
-                {isCross ? "Cross" : "Circle"} turns
-              </h1>
-            )}
+            <h1 className="text-center text-warning">
+              {isCross ? "Cross" : "Circle"} turns
+            </h1>
+          )}
           <div className="grid">
             {itemArray.map((item, index) => (
               <Card color="warning" onClick={() => changeItem(index)}>
